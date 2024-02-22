@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+
+  <circle cx="100" cy="100" r="70" fill="yellow" stroke="orange" stroke-width="4" filter="url(#shine)" />
+  
+  <defs>
+    <filter id="shine">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.6" specularExponent="20" lighting-color="#ffffff" result="specOut">
+        <fePointLight x="100" y="100" z="60" />
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="2" k3="2" k4="0" />
+    </filter>
+  </defs>
+  <text x="35" y="200" font-family="Arial" font-size="20" font-weight="bold" fill="black">SUNNY DAY!</text>
+</svg>
